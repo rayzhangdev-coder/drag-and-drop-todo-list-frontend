@@ -102,18 +102,3 @@ In the Vercel dashboard → **Settings → Environment Variables**, add:
 Click **"Deploy"**. Vercel will provide a live production URL upon completion.
 5. **CORS Configuration Note:**
 Ensure that your frontend deployment URL is added to the allowed origins in your backend's `cors` middleware to prevent cross-origin request blocks.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
