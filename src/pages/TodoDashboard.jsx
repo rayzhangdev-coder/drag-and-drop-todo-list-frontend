@@ -339,7 +339,15 @@ export default function TodoY() {
         onMouseLeave={() => setIsHovering(false)}
       >
         <div className={styles.todos} ref={containerRef} onScroll={handleScroll}>
-          {isLoading ? <div style={{color: 'white', padding: '20px'}}>Loading tasks...</div> : 
+          {isLoading ? <div style={{color: 'white', padding: '20px'}}>
+            Loading, please wait... <br/>
+            Press Enter to ADD task <br/>
+            Double click to EDIT task <br/>
+            Checkbox to mark task as DONE <br/>
+            Delete button to DELETE task <br/>
+            Note: Render server takes ~30 seconds to load... <br/>
+            
+          </div> : 
            tasks.map((task, index) => (
             <div key={task.id} className={styles['todo-container']} data-drag-item="true"> 
               {overIndex === index && draggedIndex !== null && <div className={styles.indicator} />}
