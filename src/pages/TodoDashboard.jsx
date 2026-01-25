@@ -10,7 +10,7 @@ const TrashIcon = () => (
   </svg>
 );
 
-const base_url = "http://localhost:3001/todos";
+const base_url = "https://ray-todo-api.onrender.com/todos";
 
 export default function TodoY() {
   const [tasks, setTasks] = useState([]);
