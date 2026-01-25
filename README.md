@@ -1,4 +1,4 @@
-# FRONT END - Task Management Application (Fractional Indexing)
+# FRONT END - Drag and Drop Todo List (Fractional Indexing)
 
 ## Project Status
 
