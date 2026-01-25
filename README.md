@@ -5,7 +5,7 @@
 | Item | Status |
 | --- | --- |
 | **Live Demo** | [https://todo-frontend-eight-cyan.vercel.app/](https://todo-frontend-eight-cyan.vercel.app/) |
-| **Backend Repo** | [https://github.com/rayzhangdev-coder/drag-and-drop-todo-list-backend](https://github.com/rayzhangdev-coder/drag-and-drop-todo-list-frontend) |
+| **Backend Repo** | [https://github.com/rayzhangdev-coder/drag-and-drop-todo-list-backend](https://github.com/rayzhangdev-coder/drag-and-drop-todo-list-backend) |
 
 ---
 
