@@ -1,85 +1,119 @@
-# FRONT END - Task Management Application
+# FRONT END - Task Management Application (Fractional Indexing)
 
 ## Project Status
 
 | Item | Status |
-| :--- | :--- |
-| **LIVE DEMO** | https://todo-frontend-eight-cyan.vercel.app/ |
-| **API Source** | https://github.com/rayzhangdev-coder/todo-backend |
+| --- | --- |
+| **LIVE DEMO** | [https://todo-frontend-eight-cyan.vercel.app/](https://todo-frontend-eight-cyan.vercel.app/) |
+| **Backend API Source** | [https://github.com/rayzhangdev-coder/todo-backend](https://github.com/rayzhangdev-coder/todo-backend) |
 
 ---
 
 ## 1. Overview
 
-A state-managed To-Do List application built with React.js. Connects to backend API.
+A high-performance React.js application for task management. This frontend is specifically designed to work with a fractional indexing backend, allowing users to reorder tasks via drag-and-drop with instant synchronization. It manages user sessions locally to ensure persistent and private task lists.
 
 ## 2. Features
 
-* Full CRUD (Create, Read, Update, Delete) functionality.
-* Responsive UI for mobile and desktop devices.
-* Pessimistic UI updates for reliable state management.
+* **Drag-and-Drop Reordering:** Real-time task positioning powered by fractional indexing logic.
+* **Session Persistence:** Generates and maintains a unique session UUID passed via Authorization headers.
+* **Pessimistic State Management:** Ensures the UI stays in sync with the MongoDB database state.
+* **Responsive Design:** Fully optimized for mobile, tablet, and desktop viewports.
+* **Error Handling:** Built-in alerts for synchronization conflicts (409 errors) and network issues.
 
 ## 3. Tech Stack
 
 | Category | Technologies |
-| :--- | :--- |
-| **Client** | React.js, HTML, CSS (Vite setup) |
+| --- | --- |
+| **Framework** | React.js (Vite) |
+| **State/Logic** | React Hooks, Context API |
+| **Styling** | CSS3 (Modern Flexbox/Grid) |
 | **Deployment** | Vercel (CI/CD via GitHub) |
 
 ---
 
 ## 4. Setup and Run Locally
 
-1. Ensure the [[Backend API]](https://github.com/rayzhangdev-coder/todo-backend) is running locally or deployed.
-2. `npm install`
-3. `npm run dev`
+1. **Clone the Repository:**
+```bash
+git clone https://github.com/rayzhangdev-coder/todo-frontend.git
+cd todo-frontend
+
+```
+
+
+2. **Install Dependencies:**
+```bash
+npm install
+
+```
+
+
+3. **Configure Environment Variables:**
+Create a `.env.local` file in the root directory:
+```env
+VITE_API_URL=http://localhost:3001
+
+```
+
+
+4. **Run the Development Server:**
+```bash
+npm run dev
+
+```
+
+
 
 ---
 
-### 5. Deploying the Frontend on Vercel
+## 5. Deploying the Frontend on Vercel
 
 1. **Create a New Project on Vercel:**
+* Visit: [https://vercel.com/dashboard](https://vercel.com/dashboard)
+* Click **"Add New..." → "Project"**
+* Import your GitHub repository: `todo-frontend`
 
-   * Visit: [https://vercel.com/dashboard](https://vercel.com/dashboard)
-   * Click **“Add New…” → “Project”**
-   * Import your GitHub repository
-   * Select the **frontend** folder as the project root if needed
 
 2. **Configure Build Settings:**
-   Vercel usually detects Vite automatically.
-   If not, set:
+Vite projects typically use the following defaults:
+**Build Command:**
+```bash
+npm run build
 
-   **Build Command:**
+```
 
-   ```
-   npm run build
-   ```
 
-   **Output Directory:**
+**Output Directory:**
+```text
+dist
 
-   ```
-   dist
-   ```
+```
+
 
 3. **Add Environment Variables:**
-   In the Vercel dashboard → *Settings → Environment Variables*, add:
+In the Vercel dashboard → **Settings → Environment Variables**, add:
+| Key | Value |
+| --- | --- |
+| **VITE_API_URL** | [https://your-backend-url.onrender.com](https://your-backend-url.onrender.com) |
 
-   ```
-   VITE_API_URL=https://your-backend-url.onrender.com
-   ```
-
-   Use this in your React code as:
-
-   ```js
-   import.meta.env.VITE_API_URL
-   ```
 
 4. **Deploy:**
-   Click **“Deploy”**, and Vercel will build and publish your frontend.
+Click **"Deploy"**. Vercel will provide a live production URL upon completion.
+5. **CORS Configuration Note:**
+Ensure that your frontend deployment URL is added to the allowed origins in your backend's `cors` middleware to prevent cross-origin request blocks.
 
-5. **Live URL:**
-   Your app will be available at a URL like:
 
-   ```
-   https://your-frontend-project.vercel.app
-   ```
+
+
+
+
+
+
+
+
+
+
+
+
+
